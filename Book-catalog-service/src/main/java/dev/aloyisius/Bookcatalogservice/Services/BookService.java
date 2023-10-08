@@ -47,7 +47,7 @@ public class BookService {
 
     public BookDetailsDTO bookDetails(String isbn) {
         return bookRepository.findBooksByIsbn(isbn).map(
-                BookService::bookMapper).orElseThrow();
+                BookService::bookMapper).orElse(new BookDetailsDTO("Book not found", null, isbn +" does not exist", 0.0, null));
 
     }
 
