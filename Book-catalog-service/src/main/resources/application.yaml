@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: BOOK_CATOLOG_SERVICE
+
+#  security:
+#    oauth2:
+#      client:
+#        spring:
+#          registration:
+#            spring:
+#              provider:
+#              client-id:
+#              client-secret:
+#              client-authentication-method:
+#              authorization-grant-type:
+#              scope:
+#              url:
+#          provider:
+#            spring:
+#              issuer-uri: http://localhost:8080
+
+
+#jwks-uri: http://localhost:8080/oauth2/token
+

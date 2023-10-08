@@ -1,0 +1,38 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: API_GATEWAY
+
+#  cloud:
+#    gateway:
+#      routes:
+#        -id:
+#         uri:
+#         predicates:
+#         filters:
+#           name:
+#             -
+
+  security:
+    oauth2:
+      client:
+        registration:
+          gateway-service:
+            provider: spring
+            client-id: client2
+            client-secret: secret2
+            client-authentication-method: client_secret_basic
+            scope: openid
+            authorization-grant-types: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          spring:
+            issuer-uri: http://localhost:8080
+
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE
